@@ -1,6 +1,7 @@
 package com.loveqrc.cleanarchitecture.presenter;
 
 import com.loveqrc.cleanarchitecture.di.PerActivity;
+import com.loveqrc.cleanarchitecture.domain.exception.DefaultErrorBundle;
 import com.loveqrc.cleanarchitecture.domain.exception.ErrorBundle;
 import com.loveqrc.cleanarchitecture.domain.interactor.DefaultObserver;
 import com.loveqrc.cleanarchitecture.domain.interactor.GetUserList;
@@ -73,6 +74,9 @@ public class UserListPresenter implements Presenter {
         mUserListView.hideRetry();
     }
 
+    private void showViewRetry() {
+        mUserListView.showRetry();
+    }
 
     private void hideViewLoading() {
         mUserListView.hideLoading();
@@ -91,7 +95,14 @@ public class UserListPresenter implements Presenter {
 
         @Override
         public void onError(Throwable e) {
+            hideViewLoading();
+            showErrorMessage(new DefaultErrorBundle((Exception) e));
+            showViewRetry();
+        }
 
+        @Override
+        public void onNext(List<UserModel> userModels) {
+            showUsersCollectionInView(userModels);
         }
     }
 }
