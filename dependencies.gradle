@@ -1,0 +1,56 @@
+ext {
+    //Android
+    androidBuildToolsVersion = "24.0.1"
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 21
+    androidCompileSdkVersion = 21
+    androidVersionCode = 2
+    androidVersionName = "2.0"
+
+    //Libraries
+    daggerVersion = '2.8'
+    butterKnifeVersion = '8.8.1'
+    recyclerViewVersion = '27.1.1'
+    rxJavaVersion = '2.1.13'
+    rxAndroidVersion = '2.0.2'
+    retrofitVersion = '2.4.0'
+    persistentCookieJarVersion = 'v1.0.1'
+    httpLoginterceptorVersion = '3.9.1'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    gsonVersion = '2.3'
+    okHttpVersion = '2.5.0'
+    androidAnnotationsVersion = '21.0.3'
+    arrowVersion = '1.0.0'
+
+    //Testing
+    robolectricVersion = '3.1.1'
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    mockitoVersion = '1.9.5'
+    dexmakerVersion = '1.0'
+    espressoVersion = '2.0'
+    testingSupportLibVersion = '0.1'
+
+    //Development
+    leakCanaryVersion = '1.3.1'
+
+    netWorkDependencies = [
+            retrofit           : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            persistentCookieJar: "com.github.franmontiel:PersistentCookieJar:${persistentCookieJarVersion}",
+            httpLoginterceptor : "com.squareup.okhttp3:logging-interceptor:${httpLoginterceptorVersion}",
+            adapterRxjava2     : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            converterGson      : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+    ]
+
+    normalDependencies = [
+
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            recyclerView       : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            butterKnife        : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+    ]
+}
